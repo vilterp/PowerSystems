@@ -1,0 +1,19 @@
+def lines_mapped(src, dst) =
+    lines(:"Bus from", pos, src) and
+    lines(:"Bus to", pos, dst) from
+    pos
+
+def hydro_data(id, pp, sym, val) =
+    hydro(id, sym, pos, val) and
+    pp = filepos_value[pos] - uint[32, 1]
+    from pos
+
+def wind_data(id, pp, sym, val) =
+    wind(id, sym, pos, val) and
+    pp = filepos_value[pos] - uint[32, 1]
+    from pos
+
+def solar_data(id, pp, sym, val) =
+    solar(id, sym, pos, val) and
+    pp = filepos_value[pos] - uint[32, 1]
+    from pos

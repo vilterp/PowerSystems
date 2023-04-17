@@ -1,0 +1,77 @@
+def hydro_line_chart = {
+  :data, {
+    :values, :[], hydro_data["22"]
+  };
+  :encoding, {
+    :x, {
+      :field, "DATETIME";
+      :type, "temporal"
+    };
+    :y, {
+      :field, "Value";
+      :type, "quantitative"
+    }
+  };
+  :mark, {
+    :type, "line"
+    // :point, {
+    //   :filled, false;
+    //   :fill, "white"
+    // }
+  };
+  :width, 1000;
+  :height, 1000
+}
+
+def wind_line_chart = {
+  :data, {
+    :values, :[], wind_data["7DA"]
+  };
+  :encoding, {
+    :x, {
+      :field, "DATETIME";
+      :type, "temporal"
+    };
+    :y, {
+      :field, "value";
+      :type, "quantitative"
+    }
+  };
+  :mark, {
+    :type, "line"
+    // :point, {
+    //   :filled, false;
+    //   :fill, "white"
+    // }
+  };
+  :width, 1000;
+  :height, 1000
+}
+
+def solar_line_chart = {
+  :data, {
+    :values, :[], solar_data["1DA"]
+  };
+  :encoding, {
+    :x, {
+      :field, "DATETIME";
+      :type, "temporal"
+    };
+    :y, {
+      :field, "value";
+      :type, "quantitative"
+    }
+  };
+  :mark, {
+    :type, "line"
+    // :point, {
+    //   :filled, false;
+    //   :fill, "white"
+    // }
+  };
+  :width, 1000;
+  :height, 1000
+}
+
+def lines_graph =
+    graphviz[{:edge, lines_mapped}]
